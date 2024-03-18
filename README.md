@@ -1,72 +1,31 @@
-# projectname-mock-api
+# API de Gestión de Tareas (To-Do) utilizando JSON Server en Render.com
 
-#### Prerequisite
-* Create a folder
-```
-mkdir <projectname>-mock-api
-cd <projectname>-mock-api
-```
+Este repositorio contiene un simple servidor de API construido utilizando la biblioteca JSON Server. El servidor está desplegado en Render.com, un proveedor de servicios en la nube.
 
-#### Step 1: Create a node js project
-```
-npm init -y
-```
+## Descripción
 
-#### Step 2: Install json server dependency
-```
-npm i json-server
-```
+Este servidor de API proporciona un punto de acceso para gestionar tareas pendientes (To-Do). Puedes realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en las tareas a través de las solicitudes HTTP.
 
-#### Step 3: Create server.js
-```js
-const jsonServer = require('json-server')
+## Uso
 
-const server = jsonServer.create()
+Para utilizar este API endpoint, realiza solicitudes HTTP a la siguiente URL:
 
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
- 
-server.use(middlewares)
-server.use('/api', router)
-server.listen(process.env.PORT || 5000, () => {
-  console.log('JSON Server is running')
-})
+https://todo-server-y00c.onrender.com/todos
 
+Esto devolverá una lista de tareas en formato JSON.
 
-```
+## Recursos Disponibles
 
+Actualmente, este API endpoint proporciona acceso a los siguientes recursos:
 
-#### Step 4: Create db.json
-```js
-{
-  "articles": [
-    {
-      "id": 1,
-      "title": "Example Article",
-      "content": "This is an example."
-    },
-    {
-      "id": 2,
-      "title": "Second Article",
-      "content": "This is also an example."
-    },
-    {
-      "title": "Third Article",
-      "content": "Another example!",
-      "id": 3
-    }
-  ]
-}
-```
+- `/todos`: Devuelve una lista de todas las tareas pendientes.
+- `/todos/{id}`: Devuelve una tarea específica según su ID.
+  
+  Ejemplo: `https://todo-server-y00c.onrender.com/todos/1`
 
-#### Step 5: Run the Node JS Project
-```
-node server.js
-```
+## Operaciones admitidas
 
-#### Step 6: Test - List Users API 
-```
-http://localhost:5000/api/articles
-```
-
-
+- **GET**: Obtener todas las tareas o una tarea específica.
+- **POST**: Agregar una nueva tarea.
+- **PUT**: Actualizar una tarea existente.
+- **DELETE**: Eliminar una tarea.
