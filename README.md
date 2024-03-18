@@ -2,6 +2,10 @@
 
 Este repositorio contiene un simple servidor de API construido utilizando la biblioteca JSON Server. El servidor está desplegado en Render.com, un proveedor de servicios en la nube.
 
+## Nota Importante
+
+La primera solicitud a la API puede tardar más tiempo de lo habitual debido a que el servidor puede estar pausado y necesita reiniciarse. Después de la primera solicitud, el servidor estará en funcionamiento y las respuestas serán más rápidas.
+
 ## Descripción
 
 Este servidor de API proporciona un punto de acceso para gestionar tareas pendientes (To-Do). Puedes realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en las tareas a través de las solicitudes HTTP.
